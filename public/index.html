@@ -10,15 +10,26 @@
 </head>
 
 <body>
-
-	<div class ="container">
-		<div class="jumbotron">
-  <h1>Welcome to Tech News Scrapper</h1>
-  <p>Click on the headlines to add your notes!</p>
-  <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p> -->
-</div>
-      <div id="articles"></div>
-      <div id="notes"></div>
+    <div class="container">
+        <div class="jumbotron jTron">
+            <h1>Welcome to Tech News Scrapper</h1>
+            <p id ="mainMessage"> Click on the headlines to add your notes! <span  class=" glyphicon glyphicon-share-alt"></p>
+            <a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape More Articles HERE</a>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 col-sm-offset-2 artPanel">
+                <div>
+                    <h2>ARTICLES</h2></div>
+            </div>
+            <div class="col-sm-3 col-sm-offset-3 artPanel">
+                <div>
+                    <h2>Notes</h2></div>
+            </div>
+            <div class="col-sm-12 artPanel">
+                <div id="articles"></div>
+                <div id="notes"></div>
+            </div>
+        </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="app.js"></script>
