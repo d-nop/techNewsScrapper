@@ -12,7 +12,7 @@ var cheerio = require("cheerio");
 // Require all models
 var db = require("./models");
 
-var PORT = 9000;
+var PORT = process.env.PORT || 9000;
 
 // Initialize Express
 var app = express();
@@ -26,11 +26,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Use express.static to serve the public folder as a static directory
 app.use(express.static("public"));
 
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/techNewsDB";
+
 // By default mongoose uses callbacks for async queries, we're setting it to use promises (.then syntax) instead
 // Connect to the Mongo DB
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/techNewsDB", {
-  useMongoClient: true
+mongoose.connect(MONGODB_URI, {
+useMongoClient: true
 });
 
 // Routes
