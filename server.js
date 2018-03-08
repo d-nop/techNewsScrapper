@@ -32,7 +32,7 @@ var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/techNewsDB";
 // Connect to the Mongo DB
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI, {
-useMongoClient: true
+// useMongoClient: true - deprecated
 });
 
 // Routes
@@ -70,7 +70,7 @@ app.get("/scrape", function(req, res) {
     });
 
     // If we were able to successfully scrape and save an Article, send a message to the client
-    res.send("Scrape Complete");
+    res.send("Scrape completed! Use browser back arrow to go back");
   });
 });
 
